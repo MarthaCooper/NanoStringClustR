@@ -18,8 +18,9 @@ list including table of ranked normalizations
 }
 \description{
 ranks NanoString normalisation by 1) clustering of
-groups;2) variation in relative log expression and 3) clustering
+groups; 2) variation in relative log expression and 3) clustering
 of batches. Clustering is assessed by a Generalised Dunn Index.
+Overall variation is assessed by Relative Log Expression.
 }
 \examples{
 # biological groups
