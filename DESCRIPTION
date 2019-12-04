@@ -1,0 +1,51 @@
+Package: NanoStringClustR
+Type: Package
+Title: NanoString data normalization and differential gene expression analysis
+Version: 0.1.1
+Author: Martha M Cooper and Ashley J. Waardenberg 
+Maintainer: Martha M Cooper <martha.cooper92@gmail.com>
+Description: This package allows users to perform and rank mutiple methods of 
+    normalization on NanoString,  and compare how differential gene expression
+    performs on each normalised dataset.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+biocViews:
+    Normalization,
+    Transcriptomics,
+    DifferentialExpression,
+    GeneExpression
+RoxygenNote: 6.1.1
+Depends: 
+  R (>= 3.5)
+Imports: 
+  S4Vectors,
+  SummarizedExperiment,
+  EDASeq,
+  RColorBrewer,
+  dendextend,
+  dplyr,
+  pcaMethods,
+  FSA,
+  Rfast,
+  affy,
+  preprocessCore,
+  ruv,
+  vsn,
+  ggplot2,
+  clv,
+  limma,
+  Biobase,
+  UpSetR, 
+  ctrlGene, 
+  matrixStats,
+  reshape,
+  Rfast,
+  graphics,
+  stats,
+  utils
+ 
