@@ -45,6 +45,5 @@ rnf5_eval <- norm_rank(rnf5_count_set_norm)
 }
 \references{
 Lukasz Nieweglowski (2013). clv: Cluster Validation Techniques.
-R package version 0.3-2.1.
-https://CRAN.R-project.org/package=clv
+R package version 0.3-2.1. https://CRAN.R-project.org/package=clv
 }

@@ -1,11 +1,16 @@
-NanoStringClustR will be an R package for evaluating NanoString nCounter normalization and
-is under development! 
+
+# NanoStringClustR
+
+*currently under development*
+
+NanoStringClustR is R package for evaluating NanoString nCounter normalizations. 
+
+## Installing NanoStringClustR
 
 To obtain the latest version from github, install devtools in R and use the following:
 
 ```{r}
-library(devtools)
-devtools::install_github("MarthaCooper/NanoStringClustR", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+devtools::install_github("MarthaCooper/NanoStringClustR", build_vignettes = TRUE)
 ```
 
 To run NanoStringClustR, load the library and follow the examples in the vignette.
@@ -15,6 +20,7 @@ library(NanoStringClustR)
 browseVignettes("NanoStringClustR")
 ```
 
+## Contact
 For more details, contact Martha Cooper: martha.cooper92@gmail.com 
 
 Version 0.1.1

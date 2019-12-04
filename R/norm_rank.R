@@ -42,8 +42,7 @@
 #' @references
 #'
 #' Lukasz Nieweglowski (2013). clv: Cluster Validation Techniques.
-#' R package version 0.3-2.1.
-#' https://CRAN.R-project.org/package=clv
+#' R package version 0.3-2.1. https://CRAN.R-project.org/package=clv
 #'
 
 
