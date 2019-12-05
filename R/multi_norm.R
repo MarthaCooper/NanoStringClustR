@@ -440,7 +440,7 @@ multi_norm <- function(count_set = NULL,
 
   #refactorise groups & batches in normalized and input count_sets
   count_set_in$group <- factor(count_set_in$group)
-  count_se_int$batch <- factor(count_set_in$batch)
+  count_se_in$batch <- factor(count_set_in$batch)
   count_set$group <- factor(count_set$group)
   count_set$batch <- factor(count_set$batch)
 
