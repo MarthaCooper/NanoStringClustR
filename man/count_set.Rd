@@ -32,7 +32,7 @@ will be saved}
 
 \item{count_se}{File path to an already generated summarized experiment}
 
-\item{low_reps}{Force CountSet to build if a group contains less than
+\item{low_reps}{Force Ccount_set to build if a group contains less than
 2 replicates. Default = FALSE}
 
 \item{verbose}{Verbosity ON/OFF. Default = TRUE}
@@ -41,9 +41,9 @@ will be saved}
 A summarized experiment
 }
 \description{
-Generates a summerized experiment from mRNA NanoString count
-data in an nSolver RCC Collector Tool Format or matrix and (optional) sample
-annotations including group, batch, and sample pairing.
+Generates a summerized experiment from NanoString count
+data in an nSolver RCC Collector Tool Format or matrix and (optional)
+sample annotations including group, batch, and sample pairing.
 }
 \examples{
 

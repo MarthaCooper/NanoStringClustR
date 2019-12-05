@@ -427,28 +427,24 @@ multi_norm <- function(count_set = NULL,
   #log2 transform positive_control_scaled
 
   if(positive_control_scaling == TRUE){
-
   assays(count_set)$positive_control_scaled <- log2((assays(count_set)$positive_control_scaled)+1)
-
   }
 
   if(background_correct == "none" & !(count_threshold == "mean2sd") & (!is.numeric(count_threshold))) {
-
     assays(count_set)$background_corrected <- NULL
-
   }
 
   ####### plots #######---------------------------------------------------------
 
   if (plot_this == TRUE){
 
+  #refactorise groups
+  count_set$group <- factor(count_set$group)
 
   #create vector of count_set assays after normalisations
-
   assays_all <- names(assays(count_set)[2:length(assays(count_set))])
 
   #Density Plot
-
   grDevices::pdf(file = paste(plot_dir, "Density.pdf", sep = ""), width = 10, height = 10)
   par(mfrow = c(3,3), mar = c(7,4.1,4.1,2.1))
   density_plot_wrap(count_set = count_set_in,
