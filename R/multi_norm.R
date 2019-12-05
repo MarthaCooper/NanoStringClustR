@@ -440,7 +440,7 @@ multi_norm <- function(count_set = NULL,
 
   #refactorise groups & batches
   count_set$group <- factor(count_set$group)
-  count_set$group <- factor(count_set$batch)
+  count_set$batch <- factor(count_set$batch)
 
   #create vector of count_set assays after normalisations
   assays_all <- names(assays(count_set)[2:length(assays(count_set))])
