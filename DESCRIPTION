@@ -19,7 +19,7 @@ biocViews:
     Transcriptomics,
     DifferentialExpression,
     GeneExpression
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Depends: 
   R (>= 3.5)
 Imports: 
@@ -48,4 +48,3 @@ Imports:
   graphics,
   stats,
   utils
- 

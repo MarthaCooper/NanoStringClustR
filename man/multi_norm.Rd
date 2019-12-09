@@ -4,9 +4,16 @@
 \alias{multi_norm}
 \title{Normalise nanostring mRNA data using multiple algorithms}
 \usage{
-multi_norm(count_set = NULL, norm_method = "all",
-  background_correct = "proportional", positive_control_scaling = TRUE,
-  count_threshold = 0, geNorm_n = 5, plot_dir = NULL, ruv_k = 1)
+multi_norm(
+  count_set = NULL,
+  norm_method = "all",
+  background_correct = "proportional",
+  positive_control_scaling = TRUE,
+  count_threshold = 0,
+  geNorm_n = 5,
+  plot_dir = NULL,
+  ruv_k = 1
+)
 }
 \arguments{
 \item{count_set}{A count_set of mRNA counts generated using count_set}

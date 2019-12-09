@@ -4,9 +4,16 @@
 \alias{pca_plot_wrap}
 \title{PCA plot wrapper}
 \usage{
-pca_plot_wrap(count_set = NULL, norm_method = "housekeeping_scaled",
-  title = NA, comp1 = 1, comp2 = 2, legend = TRUE, label = TRUE,
-  colors = NA)
+pca_plot_wrap(
+  count_set = NULL,
+  norm_method = "housekeeping_scaled",
+  title = NA,
+  comp1 = 1,
+  comp2 = 2,
+  legend = TRUE,
+  label = TRUE,
+  colors = NA
+)
 }
 \arguments{
 \item{count_set}{A count_set of mRNA or miRNA counts generated using count_set}

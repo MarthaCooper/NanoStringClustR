@@ -4,8 +4,13 @@
 \alias{rle_plot_wrap}
 \title{RLE plot wrapper}
 \usage{
-rle_plot_wrap(count_set = NULL, norm_method = "housekeeping_scaled",
-  title = NA, legend = TRUE, colors = NA)
+rle_plot_wrap(
+  count_set = NULL,
+  norm_method = "housekeeping_scaled",
+  title = NA,
+  legend = TRUE,
+  colors = NA
+)
 }
 \arguments{
 \item{count_set}{A count_set of mRNA or miRNA counts generated using count_set}

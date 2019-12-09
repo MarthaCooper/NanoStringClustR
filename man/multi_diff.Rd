@@ -4,8 +4,13 @@
 \alias{multi_diff}
 \title{Differential gene expression of multi-normalised NanoString mRNA data}
 \usage{
-multi_diff(count_set = NULL, adj_method = "fdr", p_cut_off = 0.1,
-  logFC_cut_off = 0, pairing = "unpaired")
+multi_diff(
+  count_set = NULL,
+  adj_method = "fdr",
+  p_cut_off = 0.1,
+  logFC_cut_off = 0,
+  pairing = "unpaired"
+)
 }
 \arguments{
 \item{count_set}{a normalised, count_set summarized experiment.

@@ -86,7 +86,8 @@ multi_diff <-   function(count_set = NULL,
   }
 
   # check that the count_set has been normalised
-  if(length(names(assays(count_set))) == 1) stop("The count_set input must be normalised with multi_norm")
+  if(length(names(assays(count_set))) == 1) stop("The count_set input must be normalised
+                                                 with multi_norm")
 
   # check the p-value adjustment method is correct
   if((adj_method %in% c("holm", "hochberg", "hommel", "bonferroni", "BH", "BY",
@@ -111,8 +112,8 @@ multi_diff <-   function(count_set = NULL,
 
   ####### DGE ######----------------------------------------------------------
   assays_all <- unique(names(assays(count_set)))
-  drop <- c("counts", "background_corrected", "positive_control_scaled")
-  assays_all <- assays_all[!(assays_all %in% drop)]
+  #drop <- c("counts", "background_corrected", "positive_control_scaled")
+  #assays_all <- assays_all[!(assays_all %in% drop)]
 
   ### 3. Limma ###
 
