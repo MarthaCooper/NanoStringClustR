@@ -31,7 +31,7 @@
 #' rnf5_count_set_norm <- multi_norm(count_set = rnf5_count_set,
 #'                                   positive_control_scaling = TRUE,
 #'                                   background_correct = "mean2sd",
-#'                                   plot_dir = "~/Dropbox/git/NanoStringClustR/plot_test/")
+#'                                   #plot_dir = "~/Dropbox/git/NanoStringClustR/plot_test/")
 #' # rank normalizations
 #' rnf5_eval <- norm_rank(rnf5_count_set_norm)
 #'
