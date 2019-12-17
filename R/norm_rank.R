@@ -125,7 +125,7 @@ norm_rank <- function(count_set = count_set){
     merged$overall_rank <- merged$variation_rank + merged$group_dunn_rank
     merged_ordered <- merged[order(merged$overall_rank),]
 
-    return(list("rankings" = merged_ordered))
+    return(merged_ordered)
 
 }
 
@@ -143,7 +143,7 @@ dunn_wrap <- function(count_set = count_set,
                                           clust = clusters,
                                           dist = "euclidean")
 
-  #calculate GCI with average intra and intercluster distances
+  #calculate GDI with average intra and intercluster distances
   intraclust = c("average")
   interclust = c("average")
 
