@@ -98,7 +98,7 @@ norm_rank <- function(count_set = count_set){
     ### lower rank = higher GDI = better clustering
 
   group_dunns_ordered <- group_dunns[order(group_dunns$group_GDI), ]
-  group_dunns_ordered$group_dunn_rank <- c(nrow(group_dunns_ordered):1)
+  group_dunns_ordered$group_GDI_rank <- c(nrow(group_dunns_ordered):1)
 
   ### variation around median RLE ### -------------------------------------------
 
@@ -122,7 +122,7 @@ norm_rank <- function(count_set = count_set){
   ### overall ranks ### -------------------------------------------
 
     merged <- merge(vars_ordered, group_dunns_ordered, by = "norm_method")
-    merged$sum_rank <- merged$variation_rank + merged$group_dunn_rank
+    merged$sum_rank <- merged$variation_rank + merged$group_GDI_rank
     merged_ordered <- merged[order(merged$sum_rank),]
 
     return(merged_ordered)
