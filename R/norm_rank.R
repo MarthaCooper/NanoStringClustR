@@ -88,7 +88,7 @@ norm_rank <- function(count_set = count_set){
 
   combined_group_dunns <- lapply(seq_along(names(all_group_dunns)), function(i){
     method_i <- data.frame("norm_method" = names(all_group_dunns)[i],
-                           "group_GDI" = all_group_dunns[[i]][1])
+                           "GDI" = all_group_dunns[[i]][1])
   })
 
   group_dunns <- do.call("rbind", combined_group_dunns)
@@ -97,8 +97,8 @@ norm_rank <- function(count_set = count_set){
 
     ### lower rank = higher GDI = better clustering
 
-  group_dunns_ordered <- group_dunns[order(group_dunns$group_GDI), ]
-  group_dunns_ordered$group_GDI_rank <- c(nrow(group_dunns_ordered):1)
+  group_dunns_ordered <- group_dunns[order(group_dunns$GDI), ]
+  group_dunns_ordered$GDI_rank <- c(nrow(group_dunns_ordered):1)
 
   ### variation around median RLE ### -------------------------------------------
 
@@ -110,19 +110,19 @@ norm_rank <- function(count_set = count_set){
   names(all_vars) <- assays_all
   vars <- as.data.frame(do.call("rbind", all_vars))
   vars_df <- data.frame("norm_method" = rownames(vars),
-                        "sum_variation" = vars$V1)
+                        "MRLE" = vars$V1)
 
   ### rank RLE ###  -------------------
 
     ### lower rank = lower sum variation = better RLE
 
-  vars_ordered <- vars_df[order(vars_df$sum_variation),]
-  vars_ordered$variation_rank <- c(1:nrow(vars_ordered))
+  vars_ordered <- vars_df[order(vars_df$MRLE),]
+  vars_ordered$MRLE_rank <- c(1:nrow(vars_ordered))
 
   ### overall ranks ### -------------------------------------------
 
     merged <- merge(vars_ordered, group_dunns_ordered, by = "norm_method")
-    merged$sum_rank <- merged$variation_rank + merged$group_GDI_rank
+    merged$sum_rank <- merged$MRLE_rank + merged$GDI_rank
     merged_ordered <- merged[order(merged$sum_rank),]
 
     return(merged_ordered)
