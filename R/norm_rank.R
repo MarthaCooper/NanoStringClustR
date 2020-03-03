@@ -122,8 +122,8 @@ norm_rank <- function(count_set = count_set){
   ### overall ranks ### -------------------------------------------
 
     merged <- merge(vars_ordered, group_dunns_ordered, by = "norm_method")
-    merged$sum_rank <- merged$MRLE_rank + merged$GDI_rank
-    merged_ordered <- merged[order(merged$sum_rank),]
+    merged$NanoNormRank <- merged$MRLE_rank + merged$GDI_rank
+    merged_ordered <- merged[order(merged$NanoNormRank),]
 
     return(merged_ordered)
 
