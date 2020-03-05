@@ -48,7 +48,7 @@
 #'
 #' @importFrom limma lmFit contrasts.fit ebayes topTable makeContrasts
 #' @importFrom SummarizedExperiment assays
-#' @importFrom ggplot2 ggplot aes geom_boxplot geom_point theme_classic scale_color_brewer element_text xlab ylab theme
+#' @importFrom ggplot2 ggplot aes geom_bar geom_point theme_classic scale_color_brewer element_text xlab ylab theme
 #' @importFrom Biobase subListExtract
 #' @importFrom UpSetR upset fromList
 #'
