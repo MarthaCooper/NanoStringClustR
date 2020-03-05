@@ -31,7 +31,8 @@
 #' rnf5_count_set_norm <- multi_norm(count_set = rnf5_count_set,
 #'                                   positive_control_scaling = TRUE,
 #'                                   background_correct = "mean2sd",
-#'                                   #plot_dir = "~/Dropbox/git/NanoStringClustR/plot_test/")
+#'                                   #plot_dir = "~/Dropbox/git/NanoStringClustR/plot_test/"
+#'                                   )
 #' # rank normalizations
 #' rnf5_eval <- norm_rank(rnf5_count_set_norm)
 #'
@@ -48,7 +49,7 @@
 #'
 #' @importFrom limma lmFit contrasts.fit ebayes topTable makeContrasts
 #' @importFrom SummarizedExperiment assays
-#' @importFrom ggplot2 ggplot aes geom_bar geom_point theme_classic scale_color_brewer element_text xlab ylab theme
+#' @importFrom ggplot2 ggplot aes geom_bar geom_point theme_classic scale_fill_brewer element_text xlab ylab theme vars facet_wrap
 #' @importFrom Biobase subListExtract
 #' @importFrom UpSetR upset fromList
 #'
@@ -150,45 +151,45 @@ multi_diff <-   function(count_set = NULL,
   colnames(for_plot) <- c("contrast", "norm_method", "No_DEG")
 
   #plot
-  DEG_plot <- ggplot2::ggplot(data = for_plot, aes(x = contrast, y = No_DEG))+
-    geom_bar(stat="identity")+
-    geom_point(data = for_plot, aes(color = norm_method))+
-    theme_classic()+
-    scale_color_brewer(palette="Paired")+
-    theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  DEG_plot <- ggplot2::ggplot(data = for_plot, aes(x = norm_method, y = No_DEG))+
+    geom_bar(stat="identity", aes(fill = norm_method), colour = "black")+
+    ggplot2::facet_wrap(ggplot2::vars(contrast))+
+    ggplot2::scale_fill_brewer()+
+    theme(axis.text.x = element_text(angle = 90, hjust = 1),
+          legend.position = "none")+
     xlab("Contrast")+
     ylab(ifelse(adj_method == "none", paste("No. DEG (p <", p_cut_off, ")", sep=""),
                 paste("No. DEG (", adj_method, " adj.p <", p_cut_off, ")", sep="")))
 
 ###### upset diagrams ######----------------------------------------------------
 
-  contrasts <- names(full_results[1:length(full_results)][[1]])
+  #contrasts <- names(full_results[1:length(full_results)][[1]])
 
   #remove contrasts that have no DEG or UpSet won't work
-  contrasts <- contrasts[ ! contrasts %in% (rownames(nDEG_table[rowSums(nDEG_table) == 0,])) ]
+  #contrasts <- contrasts[ ! contrasts %in% (rownames(nDEG_table[rowSums(nDEG_table) == 0,])) ]
 
-  length_contrasts <- vector("list", length(contrasts))
+  #length_contrasts <- vector("list", length(contrasts))
 
   #if there are no DEGs
-  if(length(length_contrasts) == 0){
-    warning(paste("No DEG at p = ", p_cut_off," & logFC > ", logFC_cut_off,
-                  " with adj_method = ", adj_method, ". UpSets not made.", sep=""))
-  } else {
+  #if(length(length_contrasts) == 0){
+    #warning(paste("No overlap in DEG at p = ", p_cut_off," & logFC > ", logFC_cut_off,
+                  #" with adj_method = ", adj_method, ". UpSets not made.", sep=""))
+  #} else {
 
-  upsets <- lapply(seq_along(contrasts), function(i){
+  #upsets <- lapply(seq_along(contrasts), function(i){
 
-    upsets_from_contrasts(cont = contrasts[i],
-                          full_results = full_results,
-                          p_cut_off = p_cut_off,
-                          logFC_cut_off = logFC_cut_off)
+    #upsets_from_contrasts(cont = contrasts[i],
+                          #full_results = full_results,
+                          #p_cut_off = p_cut_off,
+                          #logFC_cut_off = logFC_cut_off)
 
-    })
+    #})
 
-  }
+  #}
 
 
   return(list("plot_DEG" = DEG_plot,
-              "overlap_DEG" = upsets,
+              #"overlap_DEG" = upsets,
               "summary_DEG" = nDEG_table,
               "results_DEG" = full_results,
               "fits" = full_fits))
