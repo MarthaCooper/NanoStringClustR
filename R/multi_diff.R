@@ -151,7 +151,7 @@ multi_diff <-   function(count_set = NULL,
 
   #plot
   DEG_plot <- ggplot2::ggplot(data = for_plot, aes(x = contrast, y = No_DEG))+
-    geom_boxplot()+
+    geom_bar(stat="identity")+
     geom_point(data = for_plot, aes(color = norm_method))+
     theme_classic()+
     scale_color_brewer(palette="Paired")+
@@ -187,7 +187,7 @@ multi_diff <-   function(count_set = NULL,
   }
 
 
-  return(list("boxplot_DEG" = DEG_plot,
+  return(list("plot_DEG" = DEG_plot,
               "overlap_DEG" = upsets,
               "summary_DEG" = nDEG_table,
               "results_DEG" = full_results,
