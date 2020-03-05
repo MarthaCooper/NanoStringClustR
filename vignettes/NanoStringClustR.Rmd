@@ -169,9 +169,9 @@ rnf5_multi_diff <- multi_diff(count_set = rnf5_count_set_norm,
 
 **```multi_diff()```** will return a list with:
 
-+ A boxplot comparing numbers of differentially expressed genes per normalisation method
++ A plot comparing numbers of differentially expressed genes per normalisation method
 ```{r echo = TRUE}
-rnf5_multi_diff$boxplot_DEG
+rnf5_multi_diff$plot_DEG
 ```
 
 + UpSet plots showing the overlap of differentially expressed genes per normalisation method. There will be one UpSet plot per pairwise comparison (contrast). 
