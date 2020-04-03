@@ -459,7 +459,8 @@ multi_norm <- function(count_set = NULL,
     density_plot_wrap(count_set = count_set,
                       norm_method = data_in,
                       title = data_in,
-                      colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
+                      colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"),
+                      legend = FALSE)
   })
 
   grDevices::dev.off()
@@ -477,7 +478,8 @@ multi_norm <- function(count_set = NULL,
     pca_plot_wrap(count_set = count_set,
                   norm_method = data_in,
                   title = data_in,
-                  colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
+                  colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"),
+                  legend = FALSE)
   })
 
   grDevices::dev.off()
@@ -495,7 +497,8 @@ multi_norm <- function(count_set = NULL,
     rle_plot_wrap(count_set = count_set,
                   norm_method = data_in,
                   title = data_in,
-                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
+                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"),
+                  legend = FALSE)
   })
 
   grDevices::dev.off()
@@ -512,7 +515,8 @@ multi_norm <- function(count_set = NULL,
     hclust_plot_wrap(count_set = count_set,
                   norm_method = data_in,
                   title = data_in,
-                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
+                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"),
+                  legend = FALSE)
    })
 
   grDevices::dev.off()
