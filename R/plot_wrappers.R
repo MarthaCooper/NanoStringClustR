@@ -26,7 +26,7 @@ pca_plot_wrap <- function(count_set = NULL,
                           comp1 = 1,
                           comp2 = 2,
                           legend = TRUE,
-                          label = FALSE,
+                          label = TRUE,
                           colors = NA) {
 
   get_counts <- paste0("assays(count_set)$", norm_method)
@@ -46,10 +46,10 @@ pca_plot_wrap <- function(count_set = NULL,
   pc_scores <- data.frame(pc_scores, "group"=count_set$group, "samp_id"=count_set$samp_id)
 
   # initialise plot:
-  graphics::plot(1, type="n", xlim=c(min(pc_scores[comp1])-3,
-                                     max(pc_scores[comp1])+3),
-                 ylim=c(min(pc_scores[comp2])-3,
-                        max(pc_scores[comp2])+3),
+  graphics::plot(1, type="n", xlim=c(min(pc_scores[comp1])-4,
+                                     max(pc_scores[comp1])+4),
+                 ylim=c(min(pc_scores[comp2])-4,
+                        max(pc_scores[comp2])+4),
                  axes=TRUE,
                  xlab=paste("PC", comp1, " - ", pc_1, "%", sep=""),
                  ylab=paste("PC", comp2, " - ", pc_2, "%", sep=""),
