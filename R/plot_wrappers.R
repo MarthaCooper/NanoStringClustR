@@ -46,10 +46,10 @@ pca_plot_wrap <- function(count_set = NULL,
   pc_scores <- data.frame(pc_scores, "group"=count_set$group, "samp_id"=count_set$samp_id)
 
   # initialise plot:
-  graphics::plot(1, type="n", xlim=c(min(pc_scores[comp1])-2,
-                                     max(pc_scores[comp1])+2),
-                 ylim=c(min(pc_scores[comp2])-5,
-                        max(pc_scores[comp2])+5),
+  graphics::plot(1, type="n", xlim=c(min(pc_scores[comp1])-3,
+                                     max(pc_scores[comp1])+3),
+                 ylim=c(min(pc_scores[comp2])-3,
+                        max(pc_scores[comp2])+3),
                  axes=TRUE,
                  xlab=paste("PC", comp1, " - ", pc_1, "%", sep=""),
                  ylab=paste("PC", comp2, " - ", pc_2, "%", sep=""),
@@ -63,14 +63,14 @@ pca_plot_wrap <- function(count_set = NULL,
     legend("bottomright", c(as.character(unique(pc_scores$group))),
            col=colors[unique(count_set$group)],
            pch = c(rep(19, length(unique(pc_scores$group)))),
-           title = "SAMPLE GROUPS", inset = .02, cex=0.8)
+           title = "SAMPLE GROUPS", inset = .02, cex= 1)
     legend("bottomleft", c(as.character(unique(count_set$batch))),
            pch = points[unique(count_set$batch)],
-           title = "BATCH", inset = .02, cex=0.8)
+           title = "BATCH", inset = .02, cex= 1)
   }
   if(label==TRUE){
     graphics::text(pc_scores[,comp1], pc_scores[,comp2], pc_scores$samp_id,
-                   cex=1.5, pos=3, col="black")
+                   cex=1.1, pos=3, col="black")
   }
   graphics::points(pc_scores[,comp1], pc_scores[,comp2], cex = 2,
                    col = colors[count_set$group], pch= points[count_set$batch])
