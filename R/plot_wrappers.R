@@ -66,7 +66,7 @@ pca_plot_wrap <- function(count_set = NULL,
            title = "SAMPLE GROUPS", inset = .02, cex= 1)
     legend("bottomleft", c(as.character(unique(count_set$batch))),
            pch = points[unique(count_set$batch)],
-           title = "BATCH", inset = .02, cex= 1)
+           title = "BATCH", cex= 1)
   }
   if(label==TRUE){
     graphics::text(pc_scores[,comp1], pc_scores[,comp2], pc_scores$samp_id,
@@ -116,7 +116,7 @@ rle_plot_wrap <- function(count_set = NULL,
     legend("bottomright", c(as.character(unique(count_set$group))),
            col=colors[unique(count_set$group)],
            pch = c(rep(19, length(unique(count_set$group)))),
-           title = "SAMPLE GROUPS", inset = .02, cex=0.5)
+           title = "SAMPLE GROUPS", cex=1)
   }
 
 }
@@ -249,7 +249,7 @@ density_plot_wrap <- function(count_set = NULL,
     legend("topright", c(as.character(unique(count_set$group)), "ALL SAMPLES"),
            col=c(colors[unique(count_set$group)], "black"),
            pch = c(rep(19, length(unique(count_set$group)))),
-           title = "SAMPLE GROUPS", inset = .02, cex=0.5)
+           title = "SAMPLE GROUPS", cex=1)
   }
 }
 

@@ -453,13 +453,13 @@ multi_norm <- function(count_set = NULL,
   density_plot_wrap(count_set = count_set_in,
                     norm_method = "counts",
                     title = "counts",
-                    colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                    colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   lapply(seq_along(assays_all), function(i){
     data_in <- assays_all[i]
     density_plot_wrap(count_set = count_set,
                       norm_method = data_in,
                       title = data_in,
-                      colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                      colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   })
 
   grDevices::dev.off()
@@ -471,13 +471,13 @@ multi_norm <- function(count_set = NULL,
   pca_plot_wrap(count_set = count_set_in,
                 norm_method = "counts",
                 title = "counts",
-                colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   lapply(seq_along(assays_all), function(i){
     data_in <- assays_all[i]
     pca_plot_wrap(count_set = count_set,
                   norm_method = data_in,
                   title = data_in,
-                  colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                  colors = RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   })
 
   grDevices::dev.off()
@@ -489,13 +489,13 @@ multi_norm <- function(count_set = NULL,
   rle_plot_wrap(count_set = count_set_in,
                 norm_method = "counts",
                 title = "counts",
-                colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   lapply(seq_along(assays_all), function(i){
     data_in <- assays_all[i]
     rle_plot_wrap(count_set = count_set,
                   norm_method = data_in,
                   title = data_in,
-                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   })
 
   grDevices::dev.off()
@@ -506,13 +506,13 @@ multi_norm <- function(count_set = NULL,
   hclust_plot_wrap(count_set = count_set_in,
                    norm_method = "counts",
                    title = "counts",
-                   colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                   colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
   lapply(seq_along(assays_all), function(i){
     data_in <- assays_all[i]
     hclust_plot_wrap(count_set = count_set,
                   norm_method = data_in,
                   title = data_in,
-                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Dark2"))
+                  colors =  RColorBrewer::brewer.pal(max(length(unique(count_set$group)),3),"Set1"))
    })
 
   grDevices::dev.off()
