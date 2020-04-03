@@ -63,16 +63,16 @@ pca_plot_wrap <- function(count_set = NULL,
     legend("bottomright", c(as.character(unique(pc_scores$group))),
            col=colors[unique(count_set$group)],
            pch = c(rep(19, length(unique(pc_scores$group)))),
-           title = "SAMPLE GROUPS", inset = .02, cex=3)
+           title = "SAMPLE GROUPS", inset = .02, cex=0.6)
     legend("bottomleft", c(as.character(unique(count_set$batch))),
            pch = points[unique(count_set$batch)],
-           title = "BATCH", inset = .02, cex=3)
+           title = "BATCH", inset = .02, cex=0.6)
   }
   if(label==TRUE){
     graphics::text(pc_scores[,comp1], pc_scores[,comp2], pc_scores$samp_id,
                    cex=1.5, pos=3, col="black")
   }
-  graphics::points(pc_scores[,comp1], pc_scores[,comp2], cex = 3,
+  graphics::points(pc_scores[,comp1], pc_scores[,comp2], cex = 2.5,
                    col = colors[count_set$group], pch= points[count_set$batch])
 }
 
