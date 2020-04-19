@@ -163,33 +163,33 @@ multi_diff <-   function(count_set = NULL,
 
 ###### upset diagrams ######----------------------------------------------------
 
-  #contrasts <- names(full_results[1:length(full_results)][[1]])
+  contrasts <- names(full_results[1:length(full_results)][[1]])
 
   #remove contrasts that have no DEG or UpSet won't work
-  #contrasts <- contrasts[ ! contrasts %in% (rownames(nDEG_table[rowSums(nDEG_table) == 0,])) ]
+  contrasts <- contrasts[ ! contrasts %in% (rownames(nDEG_table[rowSums(nDEG_table) == 0,])) ]
 
-  #length_contrasts <- vector("list", length(contrasts))
+  length_contrasts <- vector("list", length(contrasts))
 
   #if there are no DEGs
-  #if(length(length_contrasts) == 0){
-    #warning(paste("No overlap in DEG at p = ", p_cut_off," & logFC > ", logFC_cut_off,
-                  #" with adj_method = ", adj_method, ". UpSets not made.", sep=""))
-  #} else {
+  if(length(length_contrasts) == 0){
+    warning(paste("No overlap in DEG at p = ", p_cut_off," & logFC > ", logFC_cut_off,
+                  " with adj_method = ", adj_method, ". UpSets not made.", sep=""))
+  } else {
 
-  #upsets <- lapply(seq_along(contrasts), function(i){
+  upsets <- lapply(seq_along(contrasts), function(i){
 
-    #upsets_from_contrasts(cont = contrasts[i],
-                          #full_results = full_results,
-                          #p_cut_off = p_cut_off,
-                          #logFC_cut_off = logFC_cut_off)
+    upsets_from_contrasts(cont = contrasts[i],
+                          full_results = full_results,
+                          p_cut_off = p_cut_off,
+                          logFC_cut_off = logFC_cut_off)
 
-    #})
+    })
 
-  #}
+  }
 
 
   return(list("plot_DEG" = DEG_plot,
-              #"overlap_DEG" = upsets,
+              "overlap_DEG" = upsets,
               "summary_DEG" = nDEG_table,
               "results_DEG" = full_results,
               "fits" = full_fits))

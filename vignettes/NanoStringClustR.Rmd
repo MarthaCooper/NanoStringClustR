@@ -176,7 +176,7 @@ rnf5_multi_diff$plot_DEG
 
 + UpSet plots showing the overlap of differentially expressed genes per normalisation method. There will be one UpSet plot per pairwise comparison (contrast). 
 ```{r echo = TRUE}
-#rnf5_multi_diff$overlap_DEG
+rnf5_multi_diff$overlap_DEG
 ```
 
 + A summary table showing the number of differentially expressed genes per normalization method for each pairwise comparison.
@@ -213,7 +213,7 @@ rnf5_multi_diff_paired <- multi_diff(count_set = rnf5_count_set_norm,
 ```
 
 ```{r echo = TRUE}
-#rnf5_multi_diff_paired$overlap_DEG
+rnf5_multi_diff_paired$plot_DEG
 ```
 
 # Removing unwanted variation III (RUV-III)
