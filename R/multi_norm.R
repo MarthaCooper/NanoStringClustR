@@ -44,7 +44,8 @@
 #' rnf5_count_set_norm <- multi_norm(count_set = rnf5_count_set,
 #'                        positive_control_scaling = TRUE,
 #'                        background_correct = "mean2sd",
-#'                        #plot_dir = "~/Dropbox/git/NanoStringClustR/plot_test/")
+#'                        #plot_dir = "~/Dropbox/git/NanoStringClustR/plot_test/"
+#'                        )
 #'
 #' @return Returns a count_set containing log2 transformed, normalised data and
 #' a diagnostic plot report
@@ -364,6 +365,7 @@ multi_norm <- function(count_set = NULL,
     log_counts <- log2((assays(count_set)$normalisation_input)+1)
     quant_norm <- preprocessCore::normalize.quantiles(log_counts) #outputs log2 normalised counts
     colnames(quant_norm)<-colnames(log_counts)
+    rownames(quant_norm)<-rownames(log_counts)
     #make empty quantile assay in count_set. #outputs log2 counts
     assays(count_set)$quantile <- quant_norm
 
