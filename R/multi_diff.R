@@ -47,7 +47,7 @@
 #'
 #' @export multi_diff
 #'
-#' @importFrom limma lmFit contrasts.fit ebayes topTable makeContrasts
+#' @importFrom limma lmFit contrasts.fit eBayes topTable makeContrasts
 #' @importFrom SummarizedExperiment assays
 #' @importFrom ggplot2 ggplot aes geom_bar geom_point theme_classic scale_fill_brewer element_text xlab ylab theme vars facet_wrap
 #' @importFrom Biobase subListExtract
