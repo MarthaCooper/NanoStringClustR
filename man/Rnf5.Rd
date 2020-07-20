@@ -4,7 +4,9 @@
 \name{Rnf5}
 \alias{Rnf5}
 \title{Raw Rnf5 NanoString dataset}
-\format{raw counts exported from nSolver in RCC exporter tool format}
+\format{
+raw counts exported from nSolver in RCC exporter tool format
+}
 \source{
 NCBI GEO GSE127753
 }
