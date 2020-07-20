@@ -218,7 +218,7 @@ rnf5_multi_diff_paired$plot_DEG
 
 # Removing unwanted variation III (RUV-III)
 
-If technical replicates are present, **```multi_norm```** will perform RUV normalisation by RUV-III. ```NanoStringClustR``` defines technical replicates by the sample ID in the ```samp_id``` slot of the ```count_set``` object. Technical (or pseudo) replicates should have the **same** name. For this example, we will consider the first 2 WT samples to be technical replicates. Currently, only one factor of variation is determined (*k = 1*). 
+If technical replicates are present, **```multi_norm```** will perform RUV normalisation by RUV-III. ```NanoStringClustR``` defines technical replicates by the sample ID in the ```samp_id``` slot of the ```count_set``` object. Technical (or pseudo) replicates should have the **same name**. For this example, we will consider the first 2 WT samples to be technical replicates. Currently, only one factor of variation is determined (```k = 1```). 
 
 For more information on using RUV-III with NanoString data, see: 
 Molania R, Gagnon-Bartsch JA, Dobrovic A, et al. A new normalization for Nanostring nCounter gene expression data. Nucleic Acids Res. 2019 May 22. doi: 10.1093/nar/gkz433. PubMed PMID: 31114909
