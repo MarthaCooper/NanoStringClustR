@@ -21,7 +21,7 @@ biocViews:
     GeneExpression
 RoxygenNote: 7.1.1
 Depends: 
-  R (>= 3.5)
+  R (>= 4.0)
 Imports: 
   S4Vectors,
   SummarizedExperiment,
