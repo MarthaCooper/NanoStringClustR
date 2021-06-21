@@ -1,8 +1,6 @@
 
 # NanoStringClustR
 
-*currently under development*
-
 NanoStringClustR is an R package for evaluating NanoString nCounter normalizations. 
 
 ## Installing NanoStringClustR
